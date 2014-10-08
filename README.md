@@ -47,7 +47,7 @@ https://drive.google.com/file/d/0B9kV-qjAEAezaWhEaVQ3d2ZmUjA/view?usp=sharing
     if(error) {
       console.log(error);
     } else {
-      console.log(result);
+      console.log(result); // Returns the user information 
     }
   });
 ~~~
