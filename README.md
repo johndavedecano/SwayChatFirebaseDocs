@@ -79,7 +79,7 @@ Only admin can write to the sessions and users(operators or visitors) collection
     ".read": false,
     ".write":false
     "$sessionID" : {
-        ".read": "auth != null && data('users').child(auth.uid).exists()",
+        ".read": "auth != null && data('users').child(auth.uid).exists()"
     }
 }
 
@@ -87,7 +87,8 @@ Only admin can write to the sessions and users(operators or visitors) collection
     ".read": false,
     ".write":false
     "$userID" : {
-        ".read": "auth != null && root('operators').child($userID).exists()",
+        // Operator can only read his own information
+        ".read": "auth != null && root('operators').child($userID).exists() && $userID == auth.uid"
     }
 }
 ~~~
