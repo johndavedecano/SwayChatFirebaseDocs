@@ -78,7 +78,7 @@ Make the messages restricted from other users.
 | ------------- |---------------| 
 | auth != null      |  User must be logged in |
 | root('sessions').child($sessionID).child('users').child(auth.uid).exists()| Check if the user belongs to the session |
-| data('from').val() == auth.uid | dss|
+| data('from').val() == auth.uid | Message from field must be equal to the uid of currently logged in user. |
 
 
 Only admin can write to the sessions and users(operators or visitors) collections
