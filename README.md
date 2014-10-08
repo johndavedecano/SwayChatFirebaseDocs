@@ -73,6 +73,25 @@ Make the messages restricted from other users.
 // sessions/<SESSION_ID>/users/<USER.UID>.json
 ~~~
 
+Only admin can write to the sessions and users(operators or visitors) collections
+~~~
+"sessions" : {
+    ".read": false,
+    ".write":false
+    "$sessionID" : {
+        ".read": "auth != null && data('users').child(auth.uid).exists()",
+    }
+}
+
+"operators" : {
+    ".read": false,
+    ".write":false
+    "$userID" : {
+        ".read": "auth != null && root('operators').child($userID).exists()",
+    }
+}
+~~~
+
 
 
 
