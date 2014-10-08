@@ -43,7 +43,7 @@ https://drive.google.com/file/d/0B9kV-qjAEAezaWhEaVQ3d2ZmUjA/view?usp=sharing
   
   var firebase = new Firebase('https://sweltering-heat-8664.firebaseio.com');
   
-  firebase.auth(this.token, function(error, result) {
+  firebase.auth(token, function(error, result) {
     if(error) {
       console.log(error);
     } else {
