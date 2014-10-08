@@ -69,7 +69,7 @@ Make the messages restricted from other users.
     }
 }
 
-// root('sessions').child($sessionID).child('users').child(auth.uid).exists()
+// root('sessions').child($sessionID).child('users').child(auth.uid);
 // sessions/<SESSION_ID>/users/<USER.UID>.json
 ~~~
 
