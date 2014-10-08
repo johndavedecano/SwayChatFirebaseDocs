@@ -3,33 +3,20 @@ SwayChatFirebaseDocs
 
 ##Schema
 
-| Clients | 
+| Clients | Clients |
 | --------|
-| clientID(uid)  | 
-| token | 
-| name | 
-| email | 
-| ip_address | 
-| user_type | 
-| init_message | 
-| domain | 
-| status | 
-| created_at | 
-| updated_at | 
+| clientID(uid)  | clientID(uid)  | 
+| token | token | 
+| name | name | 
+| email | email |
+| ip_address | ip_address | 
+| user_type | user_type | 
+| init_message | init_message |
+| domain | domain |
+| status | status |
+| created_at | created_at |
+| updated_at | updated_at | 
 
-| Operators | 
-| --------|
-| clientID(uid)  | 
-| token | 
-| name | 
-| email | 
-| ip_address | 
-| user_type | 
-| init_message | 
-| domain | 
-| status | 
-| created_at | 
-| updated_at | 
 
 
 
