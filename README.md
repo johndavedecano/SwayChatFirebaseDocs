@@ -93,6 +93,11 @@ Only admin can write to the sessions and users(operators or visitors) collection
 }
 ~~~
 
+#Prevent Infinite Loops
+
+~~~
+http://stackoverflow.com/questions/24830079/firebase-rate-limiting-in-security-rules/24841859#24841859
+~~~
 
 
 
