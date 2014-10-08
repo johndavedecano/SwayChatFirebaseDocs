@@ -74,7 +74,8 @@ Make the messages restricted from other users.
 // sessions/<SESSION_ID>/users/<USER.UID>.json
 ~~~
 
-
+| Rule          | Description   | 
+| ------------- |---------------| 
 | auth != null      |  User must be logged in |
 | root('sessions').child($sessionID).child('users').child(auth.uid).exists()| Check if the user belongs to the session |
 | data('from').val() == auth.uid | dss|
