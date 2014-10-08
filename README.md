@@ -64,7 +64,8 @@ Make the messages restricted from other users.
         ".write":"auth != null && root('sessions').child($sessionID).child('users').child(auth.uid).exists()",
         "$messageID" : {
           ".read": false,
-          ".write":false,  
+          ".write":false, 
+          ".validate": "newData.hasChildren(['from', 'name', 'message'])"
         }
     }
 }
