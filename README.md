@@ -61,9 +61,9 @@ Make the messages restricted from other users.
 "messages" : {
     "$sessionID" : {
         ".read": "auth != null && root('sessions').child($sessionID).child('users').child(auth.uid).exists()",
-        ".write":"auth != null && root('sessions').child($sessionID).child('users').child(auth.uid).exists() && data('from').val() == auth.uid",
+        ".write":"auth != null && root('sessions').child($sessionID).child('users').child(auth.uid).exists() && newData('from').val() == auth.uid && newData('created_at').val() == now",
         "$messageID" : {
-          ".read": false,
+          ".read": "auth != null && root('sessions').child($sessionID).child('users').child(auth.uid).exists()",
           ".write":false, 
           ".validate": "newData.hasChildren(['from', 'name', 'message'])"
         }
@@ -78,7 +78,8 @@ Make the messages restricted from other users.
 | ------------- |---------------| 
 | auth != null      |  User must be logged in |
 | root('sessions').child($sessionID).child('users').child(auth.uid).exists()| Check if the user belongs to the session |
-| data('from').val() == auth.uid | Message from field must be equal to the uid of currently logged in user. |
+| newData('from').val() == auth.uid | Message from field must be equal to the uid of currently logged in user. |
+| newData('created_at') == now | Make sure that created at field which is a timestamp is equal to firebase current timestamp |
 
 
 Only admin can write to the sessions and users(operators or visitors) collections
