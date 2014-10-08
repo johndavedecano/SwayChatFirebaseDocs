@@ -24,7 +24,11 @@ https://drive.google.com/file/d/0B9kV-qjAEAezaWhEaVQ3d2ZmUjA/view?usp=sharing
   ];
 
   $tokenGen = new Services_FirebaseTokenGenerator("<YOUR_FIREBASE_SECRET>");
+  
+  header('content-type: application/json; charset=utf-8');
+  header("access-control-allow-origin: *");
   $token = $tokenGen->createToken($data);
+  echo $token;
 ~~~
 
 
