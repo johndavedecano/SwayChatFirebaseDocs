@@ -31,6 +31,27 @@ https://drive.google.com/file/d/0B9kV-qjAEAezaWhEaVQ3d2ZmUjA/view?usp=sharing
   echo $token;
 ~~~
 
+##Logging In To Firebase
+~~~
+  var data = {
+    email: $('#email').val(),
+    name: $('#name').val(),
+    init_message: $('#message').val()
+  };
+
+  var token = $.ajax({type: "GET", url: "http://localhost:8080", data: data, async: false}).responseText;
+  
+  var firebase = new Firebase('https://sweltering-heat-8664.firebaseio.com');
+  
+  firebase.auth(this.token, function(error, result) {
+    if(error) {
+      console.log(error);
+    } else {
+      console.log(result);
+    }
+  });
+~~~
+
 #Rules
 
 
