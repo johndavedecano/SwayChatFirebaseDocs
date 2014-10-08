@@ -103,7 +103,7 @@ http://stackoverflow.com/questions/24830079/firebase-rate-limiting-in-security-r
 #Ways To Save Data
 
 | Set           | Description                                                             | 
-| ------------- |:-----------------------------------------------------------------------------| 
+| ------------- |------------------------------------------------------------------------------| 
 | set()         | Write or replace data to a defined path, like messages/users/<username> | 
 | update()      | Update some of the keys for a defined path without replacing all of the data | 
 | push()        | Add to a list of data in Firebase. Every time you call push() Firebase generates a unique ID, like messages/users/<unique-user-id>/<username> | 
