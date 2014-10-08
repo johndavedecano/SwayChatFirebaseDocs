@@ -55,29 +55,17 @@ Read More: https://www.firebase.com/docs/web/api/firebase/auth.html
 
 #Rules
 ~~~
-{
-    "rules": {
-        // Default database rules
-        ".read": false,
-        ".write": false,
-        "messages" : {
-            "$sessionID" : {
-                 ".read": "auth != null && root('sessions').child($sessionID).child('users').child(auth.uid).exists()",
-                 ".write": false,
-                 "$messageID" : {
-                 
-                 }
-            }
+"messages" : {
+    "$sessionID" : {
+        ".read": "auth != null && root('sessions').child($sessionID).child('users').child(auth.uid).exists()",
+        ".write":"auth != null && root('sessions').child($sessionID).child('users').child(auth.uid).exists()",
+        "$messageID" : {
+          ".read": false,
+          ".write":false,  
         }
     }
-    
 }
 ~~~
-
-
-
-
-
 
 
 
