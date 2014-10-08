@@ -54,6 +54,9 @@ https://drive.google.com/file/d/0B9kV-qjAEAezaWhEaVQ3d2ZmUjA/view?usp=sharing
 Read More: https://www.firebase.com/docs/web/api/firebase/auth.html
 
 #Rules
+
+Make the messages restricted from other users.
+
 ~~~
 "messages" : {
     "$sessionID" : {
