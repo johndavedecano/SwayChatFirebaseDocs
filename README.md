@@ -1,7 +1,7 @@
 SwayChatFirebaseDocs
 ====================
 
-#Schema
+##Schema
 
 | Clients | 
 | --------|
