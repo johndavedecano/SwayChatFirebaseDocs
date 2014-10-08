@@ -61,7 +61,7 @@ Make the messages restricted from other users.
 "messages" : {
     "$sessionID" : {
         ".read": "auth != null && root('sessions').child($sessionID).child('users').child(auth.uid).exists()",
-        ".write":"auth != null && root('sessions').child($sessionID).child('users').child(auth.uid).exists()",
+        ".write":"auth != null && root('sessions').child($sessionID).child('users').child(auth.uid).exists() && data('from').val() == auth.uid",
         "$messageID" : {
           ".read": false,
           ".write":false, 
@@ -100,7 +100,16 @@ Only admin can write to the sessions and users(operators or visitors) collection
 http://stackoverflow.com/questions/24830079/firebase-rate-limiting-in-security-rules/24841859#24841859
 ~~~
 
+# Adding Message
 
+~~~
+var fb = new Firebase('https://<FIREBASE_LOCATION>/messages/'+ session_id);
+fb.push({
+  from    : "uid",
+  name    : "Dave",
+  message : "Test Message"
+});
+~~~
 
 
 
