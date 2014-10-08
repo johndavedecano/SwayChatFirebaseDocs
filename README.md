@@ -4,7 +4,7 @@ SwayChatFirebaseDocs
 ##Schema
 
 | Clients | Clients |
-| --------|
+| --------| --------|
 | clientID(uid)  | clientID(uid)  | 
 | token | token | 
 | name | name | 
