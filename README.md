@@ -29,13 +29,16 @@ Firebase has different ways of authentication service providers. There are the f
 | GitHub | Authenticate users with GitHub by writing only client-side code. |
 | Google | Authenticate users with Google by writing only client-side code. |
 
-Firebase has 
+In this case well use "Custom" authentication so that well have more control on the information that we are going to get from our users. 
+
+As per example, we have to create some kind of api in our server to where we can send user information to convert it and generate a JWT token. This token well be returned to the client and client will use this token to login to Firebase.
+
 ~~~
   // https://github.com/firebase/firebase-token-generator-php
   include_once "FirebaseToken.php";
   
   $data = [
-    'uid' => 'some-uid',
+    'uid' => 'some-uid', // UID Generate new UID()
     'name'         => 'FooBar',
     'email'        => 'FooBar',
     'ip_address'   => 'FooBar',
@@ -54,7 +57,6 @@ Firebase has
   $token = $tokenGen->createToken($data);
   echo $token;
 ~~~
-
 ##Logging In To Firebase
 ~~~
   var data = {
