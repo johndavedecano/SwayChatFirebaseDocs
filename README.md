@@ -31,7 +31,7 @@ Firebase has different ways of authentication service providers. There are the f
 
 In this case well use "Custom" authentication so that well have more control on the information that we are going to get from our users. 
 
-As per example, we have to create some kind of api in our server to where we can send user information to convert it and generate a JWT token. This token well be returned to the client and client will use this token to login to Firebase.
+As per example, we have to create some kind of api in our server to where we can send user information to convert it and generate a JWT token. This token well be returned to the client and client will use this to login to Firebase.
 
 ~~~
   // https://github.com/firebase/firebase-token-generator-php
@@ -58,6 +58,13 @@ As per example, we have to create some kind of api in our server to where we can
   echo $token;
 ~~~
 ##Logging In To Firebase
+Given, we already have a valid JWT token, in our client, we have to create a new instance of firebase object in which we pass our Firebase URL as its argument.
+
+We will then use firebase.auth(token, callback(error,user)); method to login to our Firebase. This method gets the token as first argument and the callback or anonymous function as second argument. 
+
+###Callback Arguments
+1.error - ~~~null~~~ if success and ~~~error object~~~ if theres a problem
+2.user - Auth object which consists mainly of uid and other information passed to the JWT token generator.
 ~~~
   var data = {
     email: $('#email').val(),
