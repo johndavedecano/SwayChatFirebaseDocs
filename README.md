@@ -15,6 +15,21 @@ We will use Firebase as our socket and database server. Firebase is a realtime b
 https://drive.google.com/file/d/0B9kV-qjAEAezaWhEaVQ3d2ZmUjA/view?usp=sharing
 
 ##Generating JWT Tokens
+By default, anyone can actually access Firebase anonymously however but for security, we have to set some rules to protect our data from being written, deleted and updated by anyone so we have to make some kind of authentication.
+
+Firebase has different ways of authentication service providers. There are the following
+
+| Provider      | Description        | 
+| ------------- | ------------- |
+| Custom      | Generate your own login tokens. Use this to integrate with existing authentication systems. You can also use this to authenticate server-side workers. |
+| Email & Password      | Let Firebase manage passwords for you. Register and authenticate users by email & password.      | 
+| Anonymous | Build user-centric functionality without requiring users to share their personal information. Anonymous authentication generates a unique identifier for each user that lasts as long as their session. |
+| Facebook | Authenticate users with Facebook by writing only client-side code. |
+| Twitter | Authenticate users with Twitter by writing only client-side code. |
+| GitHub | Authenticate users with GitHub by writing only client-side code. |
+| Google | Authenticate users with Google by writing only client-side code. |
+
+Firebase has 
 ~~~
   // https://github.com/firebase/firebase-token-generator-php
   include_once "FirebaseToken.php";
