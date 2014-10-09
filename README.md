@@ -63,7 +63,7 @@ Given, we already have a valid JWT token, in our client, we have to create a new
 We will then use firebase.auth(token, callback(error,user)); method to login to our Firebase. This method gets the token as first argument and the callback or anonymous function as second argument. 
 
 ###Callback Arguments
-1.error - ~~~null~~~ if success and ~~~error object~~~ if theres a problem
+1.error - **null** if success and **error object** if theres a problem
 2.user - Auth object which consists mainly of uid and other information passed to the JWT token generator.
 ~~~
   var data = {
