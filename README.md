@@ -57,7 +57,7 @@ As per example, we have to create some kind of api in our server to where we can
   $token = $tokenGen->createToken($data);
   echo $token;
 ~~~
-##Logging In To Firebase
+##Authentication
 Given, we already have a valid JWT token, in our client, we have to create a new instance of firebase object in which we pass our Firebase URL as its argument.
 
 We will then use firebase.auth(token, callback(error,user)); method to login to our Firebase. This method gets the token as first argument and the callback or anonymous function as second argument. 
