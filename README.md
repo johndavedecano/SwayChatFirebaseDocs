@@ -1,6 +1,15 @@
 SwayChatFirebaseDocs
 ====================
+##Table Of Contents
+1. Introduction
+2. Schema
+3. Generating Tokens
+4. Authentication
+5. Messaging
+6. Security
 
+##Introduction
+We will use Firebase as our socket and database server. Firebase is a realtime backend as a service that allows you to create incredible apps. Save, Store and Update Data in realtime directly from the browser or other devices.
 ##Schema
 
 https://drive.google.com/file/d/0B9kV-qjAEAezaWhEaVQ3d2ZmUjA/view?usp=sharing
