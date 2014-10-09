@@ -76,7 +76,7 @@ We will then use firebase.auth(token, callback(error,user)); method to login to 
   
   var firebase = new Firebase('https://sweltering-heat-8664.firebaseio.com');
   
-  firebase.auth(token, function(error, result) {
+  firebase.authWithCustomToken(token, function(error, result) {
     if(error) {
       console.log(error);
     } else {
@@ -85,6 +85,36 @@ We will then use firebase.auth(token, callback(error,user)); method to login to 
   });
 ~~~
 Read More: https://www.firebase.com/docs/web/api/firebase/auth.html
+
+##Messaging
+
+###Ways To Save Data
+
+| Set           | Description                                                             | 
+| ------------- |------------------------------------------------------------------------------| 
+| set()         | Write or replace data to a defined path, like messages/users/<username> | 
+| update()      | Update some of the keys for a defined path without replacing all of the data | 
+| push()        | Add to a list of data in Firebase. Every time you call push() Firebase generates a unique ID, like messages/users/<unique-user-id>/<username> | 
+| transaction() | Use our transactions feature when working with complex data that could be corrupted by concurrent updates | 
+
+
+###Sending Message
+~~~
+var fb = new Firebase('https://<FIREBASE_LOCATION>/messages/'+ session_id_from_cookie);
+fb.push({
+  from    : "uid",
+  name    : "Dave",
+  message : "Test Message"
+});
+~~~
+###Receiving Message
+on() is used to listen for data changes at a particular location. This is the primary way to read data from Firebase. Your callback will be triggered for the initial data and again whenever the data changes. Use off( ) to stop receiving updates. See Reading Data from Firebase for more details.
+~~~
+fb.on('child_added', function(childSnapshot, prevChildName) {
+  // code to handle new child.
+});
+~~~
+https://www.firebase.com/docs/web/api/query/on.html
 
 ##Security
 
