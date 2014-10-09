@@ -86,7 +86,9 @@ We will then use firebase.auth(token, callback(error,user)); method to login to 
 ~~~
 Read More: https://www.firebase.com/docs/web/api/firebase/auth.html
 
-#Rules
+##Security
+
+###Rules
 
 Make the messages restricted from other users.
 
@@ -135,33 +137,11 @@ Only admin can write to the sessions and users(operators or visitors) collection
 }
 ~~~
 
-#Prevent Infinite Loops
+###Prevent Infinite Loops
 
 ~~~
 http://stackoverflow.com/questions/24830079/firebase-rate-limiting-in-security-rules/24841859#24841859
 ~~~
-
-#Ways To Save Data
-
-| Set           | Description                                                             | 
-| ------------- |------------------------------------------------------------------------------| 
-| set()         | Write or replace data to a defined path, like messages/users/<username> | 
-| update()      | Update some of the keys for a defined path without replacing all of the data | 
-| push()        | Add to a list of data in Firebase. Every time you call push() Firebase generates a unique ID, like messages/users/<unique-user-id>/<username> | 
-| transaction() | Use our transactions feature when working with complex data that could be corrupted by concurrent updates | 
-
-
-# Adding Message
-
-~~~
-var fb = new Firebase('https://<FIREBASE_LOCATION>/messages/'+ session_id);
-fb.push({
-  from    : "uid",
-  name    : "Dave",
-  message : "Test Message"
-});
-~~~
-
 
 
 
